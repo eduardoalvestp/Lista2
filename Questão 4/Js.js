@@ -1,4 +1,4 @@
-const checaPrimo = (number) => {
+const isPrimo = (number) => {
     var count = 0
     for(let i = 1; i <= number; i++){
         if(number % i == 0){
@@ -6,10 +6,9 @@ const checaPrimo = (number) => {
         }          
     }
     if(count == 2){
-        alert("Esse número é primo")
-        return
+        return true
     }       
-    alert("Esse número não é primo")
+    return false
 }
 
 {
@@ -17,9 +16,12 @@ const checaPrimo = (number) => {
     if((number < 0)||(number == 0)){
         alert("O valor deve ser positivo e diferente de zero!")
     }else{
+        let soma = 0
         for(let i = 1; i <= number; i++){
-            let n = parseInt(prompt("Verificar se o número é primo:"))
-            checaPrimo(n)
+            let x = parseInt(prompt("Insira um número:"))
+            if(isPrimo(x))
+                soma += x
         }
+        alert("Soma dos números primos inseridos: " + soma)
     }
 }
